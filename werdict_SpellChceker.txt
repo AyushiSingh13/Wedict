@@ -1,0 +1,23 @@
+from textblob import TextBlob
+def check_spelling():
+    a=TextBlob(spell_check.get())
+    b=Label(window,text="the correct spelling is:",font=("Comic Sans MS",30,"bold"),bg="pink",fg="black")
+    b.pack()
+    correct_text=Label(window,text=str(a.correct()),font=("Aerial",20,"bold"),bg="pink",fg="black")
+    correct_text.pack()
+
+
+window=Tk()
+window.title("WERDICT")
+window.geometry("1000x1000")
+window.config(background="seashell2")
+text_heading=Label(window,text="Namaste! Werdict Welcomes You",font=("lucida handwriting",30,"bold"),bg="grey",fg="black")
+text_heading.pack()
+text_lab=Label(window,text="enter your text",font=("lucida handwriting",20,"italic"),bg="white",fg="black")
+text_lab.pack()
+spell_check=Entry(window,font=("lucida handwriting",25,"bold"),width="600",bg="grey")
+spell_check.pack()
+check_button=Button(window,text="Check??",font=("lucida handwriting",20,"bold"),bg="white",fg="black",command= check_spelling)
+check_button.pack()
+
+window.mainloop()
